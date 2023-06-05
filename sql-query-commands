@@ -99,3 +99,8 @@ SELECT name
 FROM accounts
 WHERE name LIKE '%s';
 
+
+/*This query is to use IN command to search */
+SELECT name, primary_poc, sales_rep_id
+FROM accounts
+WHERE name IN ('Walmart, Target, Nordstream')
