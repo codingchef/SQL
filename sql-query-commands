@@ -1,0 +1,101 @@
+/*SELECT*/
+/*This query is to select columns in the table*/
+SELECT *
+FROM table_name;
+
+/*This query is to select columns from the table*/
+SELECT Col1, Col2, Col2
+FROM table_name;
+
+
+/*LIMTI*/
+/*This query is to select columns form the tables with a limit on number of rows to retrive*/
+SELECT Col1, Col2, Col3
+FROM table_name
+LIMIT 100;
+
+/*This query is to select columns from the tables and order Col1 in ascending order with a limit on number of rows to retrive*/
+SELECT Col1, Col2, Col3
+FROM table_name
+ORDER BY Col1
+LIMIT 100;
+
+
+
+/*ORDER BY*/
+/*This query is to select columns from the tables and order Col1 in decending order with a limit on number of rows to retrive*/
+SELECT Col1, Col2, Col3
+FROM table_name
+ORDER BY Col1 DESC
+LIMIT 100;
+
+/*This query is to select columns form the tables and order Col1 and Col2 in decending order with a limit on number of rows to retrive*/
+SELECT Col1, Col2, Col3
+FROM table_name
+ORDER BY Col1, Col2 DESC
+LIMIT 100;
+
+/* This query is to select columns from the table and order Col2 in acending order and Col3 in decending order*/
+SELECT Col1, Col2, Col3
+FROM table_name
+ORDER BY Col2, Col3 DESC;
+
+/* This query is to select columns from the table and order Col3 in decending order and Col2 in acending order*/
+SELECT Col1, Col2, Col3
+FROM table_name
+ORDER BY Col3 DESC, Col2;
+
+
+
+/*WHERE*/
+/*This is to used to filiter by criteria/condition/filter*/
+SELECT *
+FROM table_name
+WHERE Col1 >= 1000
+LIMIT 5;
+
+SELECT *
+FROM table_name
+WHERE Col1 < 500
+LIMIT 10;
+
+SELECT name, website, primary_poc
+FROM accounts
+WHERE name = 'Exxon Mobil';
+
+
+
+/*Derived Columns PEMDAS rule*/ 
+/*This query is used to derive a calulated / computed column using arthmetic operators*/
+
+SELECT id, account_id, (standard_amt_usd / standard_qty) AS rate_per_unit
+FROM orders
+LIMIT 10;
+
+SELECT id, account_id, standard_amt_usd/standard_qty AS unit_price
+FROM orders
+LIMIT 10;
+
+SELECT id, account_id, (poster_amt_usd / standard_amt_usd)*100 AS poster_revenue_percentage
+FROM orders
+LIMIT 10;
+
+SELECT id, account_id, 
+       poster_amt_usd/(standard_amt_usd + gloss_amt_usd + poster_amt_usd) AS post_per
+FROM orders
+LIMIT 10;
+
+
+/*This query is to use LIKE command to search */
+SELECT name
+FROM accounts
+WHERE name LIKE 'C%';
+
+SELECT name
+FROM accounts
+WHERE name LIKE '%one%';
+
+SELECT name
+FROM accounts
+WHERE name LIKE '%s';
+
