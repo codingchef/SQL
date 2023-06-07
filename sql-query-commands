@@ -118,7 +118,14 @@ WHERE channel NOT IN ('organic','adwords')
 
 SELECT *
 FROM accounts
-WHERE name NOT LIKE '%c'
+WHERE name NOT LIKE 'C%
 
 
+SELECT *
+FROM accounts
+WHERE name NOT LIKE '%one%'
 
+
+SELECT *
+FROM accounts
+WHERE name NOT LIKE '%s'
