@@ -129,3 +129,15 @@ WHERE name NOT LIKE '%one%'
 SELECT *
 FROM accounts
 WHERE name NOT LIKE '%s'
+
+
+
+/*This query is to use AND command to search */
+SELECT *
+FROM orders
+WHERE standard_qty > 1000 AND poster_qty > 0 AND gloss_qty > 0
+
+
+SELECT *
+FROM accounts
+WHERE name NOT LIKE 'C%' AND name NOT LIKE '%s'
