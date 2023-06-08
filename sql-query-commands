@@ -132,7 +132,7 @@ WHERE name NOT LIKE '%s'
 
 
 
-/*This query is to use AND command to search */
+/*This query is to use AND / BETWEEN command to search */
 SELECT *
 FROM orders
 WHERE standard_qty > 1000 AND poster_qty > 0 AND gloss_qty > 0
@@ -151,3 +151,14 @@ WHERE gloss_qty BETWEEN 24 AND 29
 SELECT *
 FROM web_events
 WHERE channel = 'organic' OR channel = 'adword'
+
+
+/*This query is to use OR command to search */
+SELECT id
+FROM orders
+WHERE (gloss_qty > 4000 OR poster_qty > 4000)
+
+
+SELECT *
+FROM orders
+WHERE standard_qty = 0 AND (gloss_qty > 1000 OR poster_qty > 1000)
