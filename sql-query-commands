@@ -195,10 +195,10 @@ OR	WHERE Col1 > 5 OR Col2 < 3	Filter rows where at least one condition must be t
 BETWEEN	WHERE Col BETWEEN 3 AND 5	Often easier syntax than using an AND
 
 
-
-
-
-
+/*This query is to use  JOIN ON command to search */
+FROM orders
+JOIN accounts
+ON orders.account_id = accounts.id
 
 
 
